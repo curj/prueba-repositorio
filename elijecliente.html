@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<link rel="stylesheet" type="text/css" href="./estilos/estilos.css" />
+
+<script language="javascript">
+	function busca_dni(){
+		if(document.getElementById("DNI").value == ""){
+			alert('Por favor introduzca un DNI.');
+		} else {
+			document.for_busca_dni.submit();
+		}
+	}
+	function busca_nombre(){
+		if(document.getElementById("Nombre").value == ""){
+			alert('Por favor introduzca un nombre.');
+		} else {
+			document.for_busca_nombre.submit();
+		}
+	}
+	function busca_apellido1(){
+		if(document.getElementById("Apellido1").value == ""){
+			alert('Por favor introduzca un apellido.');
+		} else {
+			document.for_busca_apellido1.submit();
+		}
+	}
+	function nobackbutton(){
+		window.location.hash="no-back-button";
+		window.location.hash="Again-No-back-button" //chrome
+		window.onhashchange=function(){window.location.hash="no-back-button";}
+	}
+</script>
+
+</head>
+<body onload="nobackbutton();">
+<table class="table1">
+<tr>
+	<td>
+<!--Título-->
+<p><H2>ELEJIR EL CLIENTE</H2></p>
+<FORM id="for_busca_dni" name="for_busca_dni" action="elije_cliente_dni.php" method="POST">
+<p>
+<input name="DNI" type="text" id="DNI" size="30"/></label>
+<input class="p1" type="button" name="button" onclick="javascript:busca_dni();" value="BUSCAR POR DNI"/>
+</p>
+</FORM>
+<FORM id="for_busca_nombre" name="for_busca_nombre" action="elije_cliente_nombre.php" method="POST">
+<p>
+<input name="Nombre" type="text" id="Nombre" size="30"/></label>
+<input class="p1" type="button" name="button" onclick="javascript:busca_nombre();" value="BUSCAR POR NOMBRE"/>
+</p>
+</FORM>
+<FORM id="for_busca_apellido1" name="for_busca_apellido1" action="elije_cliente_apellido1.php" method="POST">
+<p>
+<input name="Apellido1" type="text" id="Apellido1" size="30"/></label>
+<input class="p1" type="button" name="button" onclick="javascript:busca_apellido1();" value="BUSCAR POR PRIMER APELLIDO"/>
+</p>
+</FORM>
+<br><br>
+<FORM id="volver" name="volver" action="albaran.php" METHOD="POST">
+<p><input class="p1" type="submit" name="Submit" value="VOLVER"/></p>
+</FORM>
+	</td>
+</tr>
+</table>
+</body>
+</html>
